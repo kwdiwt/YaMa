@@ -19,19 +19,10 @@ RUN git config --global user.email "you@example.com" && \
     npm config set registry http://mirrors.cloud.tencent.com/npm/ && \
     pip config set global.index-url http://mirrors.aliyun.com/pypi/simple/ && \
     \
-    git clone https://github.com/frida/frida-core.git && \
+    git clone git@github.com:kwdiwt/frida-core.git && \
     cd frida-core && \
-    git checkout 16.3.1 -b buildFrida && \
+    git checkout 1656 && \
     git submodule update --init --recursive && \
-    \
-    cd && git clone https://github.com/Ylarod/Florida.git && \
-    cd Florida && \
-    git checkout 9172e84ad3954e808638152539f70eb6bc079bac -b buildFrida && \
-    mkdir ~/frida-core/patch && \
-    cp -r patches/frida-core ~/frida-core/patch && \
-    \
-    cd ~/frida-core && \
-    git am patch/frida-core/*.patch && \
     sed -i "s/ggbond/${NAME:-kjlk}/" src/frida-glue.c && \
     \
     cd && curl -O https://dl.google.com/android/repository/android-ndk-r25c-linux.zip && \
