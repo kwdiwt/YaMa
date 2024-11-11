@@ -19,7 +19,7 @@ RUN git config --global user.email "you@example.com" && \
     npm config set registry http://mirrors.cloud.tencent.com/npm/ && \
     pip config set global.index-url http://mirrors.aliyun.com/pypi/simple/ && \
     \
-    git clone git@github.com:kwdiwt/frida-core.git && \
+    git clone https://github.com/kwdiwt/YaMa.git && \
     cd frida-core && \
     git checkout 1656 && \
     git submodule update --init --recursive && \
