@@ -21,7 +21,7 @@ RUN git config --global user.email "you@example.com" && \
     \
     git clone https://github.com/kwdiwt/frida-core.git && \
     cd frida-core && \
-    git checkout 1656 && \
+    git switch --track origin/1656 && \
     git submodule update --init --recursive && \
     sed -i "s/ggbond/${NAME:-kjlk}/" src/frida-glue.c && \
     \
